@@ -34,9 +34,10 @@
             // 
             // btnMatrix
             // 
-            this.btnMatrix.Location = new System.Drawing.Point(68, 27);
+            this.btnMatrix.Location = new System.Drawing.Point(48, 18);
+            this.btnMatrix.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMatrix.Name = "btnMatrix";
-            this.btnMatrix.Size = new System.Drawing.Size(633, 75);
+            this.btnMatrix.Size = new System.Drawing.Size(443, 50);
             this.btnMatrix.TabIndex = 0;
             this.btnMatrix.Text = "2차원 배열";
             this.btnMatrix.UseVisualStyleBackColor = true;
@@ -44,19 +45,21 @@
             // 
             // txtMatrix
             // 
-            this.txtMatrix.Location = new System.Drawing.Point(68, 108);
+            this.txtMatrix.Location = new System.Drawing.Point(48, 72);
+            this.txtMatrix.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMatrix.Multiline = true;
             this.txtMatrix.Name = "txtMatrix";
-            this.txtMatrix.Size = new System.Drawing.Size(633, 254);
+            this.txtMatrix.Size = new System.Drawing.Size(444, 171);
             this.txtMatrix.TabIndex = 1;
             // 
             // Chap17_Array2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 405);
+            this.ClientSize = new System.Drawing.Size(420, 249);
             this.Controls.Add(this.txtMatrix);
             this.Controls.Add(this.btnMatrix);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Chap17_Array2";
             this.Text = "2차원 배열";
             this.ResumeLayout(false);
