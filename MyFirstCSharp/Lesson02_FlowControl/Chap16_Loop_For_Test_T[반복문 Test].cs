@@ -41,17 +41,24 @@ namespace MyFirstCSharp
 
             string sErrorMessge = string.Empty; // = ""
             if (!int.TryParse(txtStart.Text , out iStartvalue))
+            //!=논리부정연산자로 논리값을 반전시킨다.
+            //trypars를 사용해 문자열 정수 변환이 실패하면 true
+            // 실패할 경우  out iStartvalue에 ????? 변환되지않은 초기값이 할당?
+            //실패가 true이기에 에러 메시지도 출력된다. 외부에서.
+
             {
                 sErrorMessge = "입력한 시작 문자가 숫자로 바뀔수 없습니다.";
                 //MessageBox.Show("입력한 시작 문자가 숫자로 바뀔수 없습니다.");
                 //return;
             }
+
             else if (!int.TryParse(txtEnd.Text, out iEndValue))
             {
                 sErrorMessge = "입력한 종료 문자가 숫자로 바뀔 수 없습니다.";
                 //MessageBox.Show("입력한 종료 문자가 숫자로 바뀔 수 없습니다.");
                 //return;
             }
+
             else if (iStartvalue >= iEndValue)
             {
                 sErrorMessge = "입력 숫자가 종료 숫자 보다 큽니다.";
@@ -62,6 +69,7 @@ namespace MyFirstCSharp
             if (sErrorMessge != "")
             {
                 // 벨리데이션 체크 시 예외 상황이 발생 되었을 경우.
+                //예외상황이란걸 어떻게 아냐?
                 MessageBox.Show(sErrorMessge);
                 return;
             }

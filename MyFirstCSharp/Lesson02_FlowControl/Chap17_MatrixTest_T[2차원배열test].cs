@@ -29,6 +29,10 @@ namespace MyFirstCSharp
             // 역전 될 배열이 담길 배열 변수
             int[,] iResults = new int[iRowCount, iColumnCount];
 
+
+            // 도저히 이해가 안감....
+
+
             // 원본 배열의 행을 역으로 거슬러 올라가는 행의 주소 i
             int iResultRowindex = 0; // 복사된 배열 의 등록될 행의수
             for (int i  = iRowCount -1; i >= 0; i--)

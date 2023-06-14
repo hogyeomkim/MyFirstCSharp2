@@ -27,9 +27,9 @@ namespace MyFirstCSharp
             iVlues[0, 0] = 100;
             iVlues[0, 1] = 500;
             iVlues[0, 2] = 300;
-            iVlues[0, 3] = 200;
+            iVlues[0, 3] = 200; //1행 4열
 
-            iVlues[1, 0] = 10;
+            iVlues[1, 0] = 10;  //2행 1열
             iVlues[1, 1] = 20;
             iVlues[1, 2] = 800;
             iVlues[1, 3] = 20;
@@ -41,7 +41,9 @@ namespace MyFirstCSharp
 
             // 3. 2차원 배열의 행의 수 를 구하는 기능. 
             int iMatrixRowCount = iValues2.GetLength(0); // 2차원 배열의 행의 수 대입.
-            
+            //@@ GetLength(0)의 자리에 1은 안되는가??
+            // 아 new int[3, 4]에서 0자리는 3행, 1자리는 4열이여서 무조건 0과 1이다.
+
             // 4. 2차원 배열의 열의 수 를 구하는 기능. 
             int imatrixColumnCount = iValues2.GetLength(1); // 2차원 배열의 열의 수 대입.
             
