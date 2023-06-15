@@ -13,11 +13,12 @@ namespace MyFirstCSharp.Lesson05_Class
     public partial class Chap34_Struture_Apply_UserReg_T : Form
     {
         // 클래스의 전역 변수 로 사용자 정보 데이터 유형을 나열할 수 있는 List
-        private List<UserInfo_T> userinfos = new List<UserInfo_T>();
+        private List<UserInfo_T> userinfos_reg = new List<UserInfo_T>();
 
-        public Chap34_Struture_Apply_UserReg_T()
+        public Chap34_Struture_Apply_UserReg_T(List<UserInfo_T> TempList)
         {
             InitializeComponent();
+            userinfos_reg = TempList;
         }
 
         private void Chap34_Struture_Apply_UserReg_T_Load(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace MyFirstCSharp.Lesson05_Class
             //userinfos.Add(userinfo); 
 
             // 위 로직은 아래와 같이 표현 할 수 있다. 
-            userinfos.Add(new UserInfo_T
+            userinfos_reg.Add(new UserInfo_T
             {   UserId      = sUserid,
                 Password    = sPassWord,
                 UserName    = sUserName,

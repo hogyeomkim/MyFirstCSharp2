@@ -33,8 +33,8 @@
             this.txtUserId = new System.Windows.Forms.TextBox();
             this.txtPassWord = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLogIn = new System.Windows.Forms.Button();
+            this.btnUserReg = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -71,24 +71,25 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "PW";
             // 
-            // button1
+            // btnLogIn
             // 
-            this.button1.Location = new System.Drawing.Point(106, 88);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 55);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "로그인";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLogIn.Location = new System.Drawing.Point(106, 88);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(95, 55);
+            this.btnLogIn.TabIndex = 4;
+            this.btnLogIn.Text = "로그인";
+            this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
-            // button2
+            // btnUserReg
             // 
-            this.button2.Location = new System.Drawing.Point(207, 88);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 55);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "사용자 등록";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnUserReg.Location = new System.Drawing.Point(207, 88);
+            this.btnUserReg.Name = "btnUserReg";
+            this.btnUserReg.Size = new System.Drawing.Size(114, 55);
+            this.btnUserReg.TabIndex = 5;
+            this.btnUserReg.Text = "사용자 등록";
+            this.btnUserReg.UseVisualStyleBackColor = true;
+            this.btnUserReg.Click += new System.EventHandler(this.btnUserReg_Click);
             // 
             // label3
             // 
@@ -106,8 +107,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(833, 485);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnUserReg);
+            this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.txtPassWord);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUserId);
@@ -125,8 +126,8 @@
     private System.Windows.Forms.TextBox txtUserId;
     private System.Windows.Forms.TextBox txtPassWord;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.Button button1;
-    private System.Windows.Forms.Button button2;
+    private System.Windows.Forms.Button btnLogIn;
+    private System.Windows.Forms.Button btnUserReg;
     private System.Windows.Forms.Label label3;
 }
 }
