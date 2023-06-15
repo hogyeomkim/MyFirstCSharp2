@@ -1,6 +1,6 @@
-﻿namespace MyFirstCSharp
+﻿namespace MyFirstCSharp.Lesson05_Class
 {
-    partial class Chap31_ClassTest_Stop
+    partial class Chap33_Struct
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnStop = new System.Windows.Forms.Button();
+            this.btnStruct = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnStop
+            // btnStruct
             // 
-            this.btnStop.Location = new System.Drawing.Point(62, 12);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(267, 155);
-            this.btnStop.TabIndex = 0;
-            this.btnStop.Text = "비가동 등록";
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            this.btnStruct.Location = new System.Drawing.Point(26, 12);
+            this.btnStruct.Name = "btnStruct";
+            this.btnStruct.Size = new System.Drawing.Size(297, 105);
+            this.btnStruct.TabIndex = 0;
+            this.btnStruct.Text = "구조체";
+            this.btnStruct.UseVisualStyleBackColor = true;
+            this.btnStruct.Click += new System.EventHandler(this.btnStruct_Click);
             // 
-            // Chap31_ClassTest_Stop
+            // Chap33_Struct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 199);
-            this.Controls.Add(this.btnStop);
-            this.Name = "Chap31_ClassTest_Stop";
-            this.Text = "설비 비가동 등록";
+            this.ClientSize = new System.Drawing.Size(362, 141);
+            this.Controls.Add(this.btnStruct);
+            this.Name = "Chap33_Struct";
+            this.Text = "구조체";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnStruct;
     }
 }

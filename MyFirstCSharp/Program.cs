@@ -17,7 +17,7 @@ namespace MyFirstCSharp
         {
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-            System.Windows.Forms.Application.Run(new Chap17_Array2());
+            System.Windows.Forms.Application.Run(new Chap20_MiddleTest_01_T());
         }
     }
 }
