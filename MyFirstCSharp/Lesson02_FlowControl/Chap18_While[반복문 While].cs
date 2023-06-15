@@ -59,19 +59,25 @@ namespace MyFirstCSharp
             // 의 경우 불규칙적으로 들어오는 데이터를 항상 수신 대기 해야 하므로 
             // 무한 루프를 구현해 두고 수신 을 대기 하는 프로그래밍을 할 수 있다. 
 
-            // 무한 루프를 구성할경우 bool 을 이요하여 처리한다. 
+            // 무한 루프를 구성할경우 bool 을 이용하여 처리한다. 
 
             int iCnt    = 1;
             int iResult = 0;
 
             bool bOnOff = true;
+            //bOnOff 변수는 초기값으로 true를 할당받습니다.
+            //하지만 이 변수는 현재 코드에는 사용되지 않습니다.
 
-            while(1 == 1)
+            while (1 == 1) //1=1이기에 무한 루프시작
             {
                 iCnt++;
                 iResult += iCnt;
             }
         }
+
+        //예시로 제공된 코드는 무한 루프를 보여주기 위한 예시입니다.
+        //실제로 사용할 때에는 종료 조건을 명확히 설정하여
+        //무한 루프에 빠지지 않도록 주의해야 합니다.
 
         private void btnDoWhile_Click(object sender, EventArgs e)
         {
@@ -87,8 +93,8 @@ namespace MyFirstCSharp
             do
             {
                 // 최초 1회 실행 및 조건 만족 시 반복 실행.
-                iResult += iCOunt;
-                iCOunt--;
+                iResult += iCOunt; //iResult += iCount: iResult 변수에 iCount 값을 누적합니다.
+                iCOunt--; //iCount--: iCount 변수의 값을 1씩 감소시킵니다
             }
             while (iCOunt < 100);
         }
