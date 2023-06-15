@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyFirstCSharp.Lesson05_Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MyFirstCSharp.Lesson05_Class
+namespace MyFirstCSharp
 {
     public partial class Chap30_Class_F : Form
     {
         // Chap29_Class 클래스를 Chap30_Class_F 의 필드멤버로 등록.
         private Chap29_Class _CHAP29 = new Chap29_Class();
-        
+
         public Chap30_Class_F()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace MyFirstCSharp.Lesson05_Class
             // CHAP29_T.sValue 의 값은 영향을 받지 않는다.
             Chap29_Class CHAP29_T = new Chap29_Class();
             MessageBox.Show(CHAP29_T.sValue);
-            
+
         }
 
         private void btnClass2_Click(object sender, EventArgs e)

@@ -53,6 +53,9 @@ namespace MyFirstCSharp
                     bFindFlag = true;
                 }
             }
+            /*주어진 코드에서는 foreach 반복문을 사용하여 sTitle 문자열의 각 문자 c를 순차적으로 반복합니다. 
+             * 각 반복에서 코드는 cValue (입력한 문자)가 현재 문자 c와 동일한지 확인합니다. 일치하는 경우, 
+             * bFindFlag를 true로 설정하여 입력한 문자가 문자열에 포함되어 있는지를 나타냅니다.*/
 
             string sMessage = string.Empty;
             if (bFindFlag) 
@@ -115,5 +118,19 @@ namespace MyFirstCSharp
                 }
             }
         }
-    }
+    }/*btnAllClear_Click 메소드는 클릭 이벤트 핸들러로, 텍스트 박스를 일괄적으로 초기화하는 기능을 제공합니다.
+
+주석으로 처리된 코드들은 각각의 텍스트 박스를 직접 지우는 방식이지만, 확장성과 유지보수성이 낮으며 반복적인 코드로 인해 비효율적입니다.
+
+textBox1.Clear();를 사용하여 textBox1의 텍스트를 초기화합니다.
+
+foreach 반복문을 사용하여 grpControls 그룹 박스에 포함된 컨트롤(도구)을 하나씩 추출합니다. WinForm에서 컨트롤은 Control 또는 Component 클래스로 표현됩니다.
+
+추출한 컨트롤을 MyControl 변수에 담습니다.
+
+is 연산자를 사용하여 MyControl이 TextBox 형식인지 확인합니다.
+
+MyControl이 TextBox 형식인 경우, 텍스트 속성(Text)의 내용을 지웁니다.
+
+선택적으로, MyControl을 TextBox 형식으로 명시적으로 캐스팅한 후 `Clear*/
 } 
