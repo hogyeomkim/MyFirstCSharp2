@@ -277,7 +277,6 @@
     </Compile>
     <Compile Include="Lesson05_Class\Chap27_AccessModifier[접근 제한자].cs" />
     <Compile Include="Lesson05_Class\Chap27_Accessodifier_Partial.cs" />
-    <Compile Include="Lesson05_Class\Chap28_StaticConst[정적한정자_상수].cs" />
     <Compile Include="Lesson05_Class\Chap28_StaticConst_F.cs">
       <SubType>Form</SubType>
     </Compile>

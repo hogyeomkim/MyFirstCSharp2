@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyFirstCSharp
@@ -27,7 +20,7 @@ namespace MyFirstCSharp
             string sValues = string.Empty;
 
             // 배열의 행의 수 구하기. 
-            int iRowCnt = iValues.GetLength(0); 
+            int iRowCnt = iValues.GetLength(0);
 
             // 배열의 열의 수 구하기
             int iColCnt = iValues.GetLength(1);
@@ -54,7 +47,7 @@ namespace MyFirstCSharp
                 bBreakFlag = false;
                 // 메모화 기능을 이용한 벨리데이션.
                 // 찾은 값이 등록되어 있는 배열에서 기준값이 등록 되어 있는지 확인.
-                for (int i = 0;i < iResults.Length; i++)
+                for (int i = 0; i < iResults.Length; i++)
                 {
                     if (iValue == iResults[i])
                     {
@@ -63,7 +56,7 @@ namespace MyFirstCSharp
                         bBreakFlag = true;
                         break;
                     }
-                } 
+                }
                 if (bBreakFlag)
                 {
                     continue;
@@ -73,7 +66,7 @@ namespace MyFirstCSharp
                 iFindValue = 20 - iValue; // 배열에서 찾을 수 
 
                 // iR_Value : 기준 값에서 20을 만들수 있는 대상 정수.
-                foreach (int iR_Value  in iValues)
+                foreach (int iR_Value in iValues)
                 {
                     ++iSvalueForeacCnt;
                     if (iMvalueForeacCnt == iSvalueForeacCnt)

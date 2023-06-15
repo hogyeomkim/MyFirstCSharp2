@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyFirstCSharp
@@ -25,7 +18,7 @@ namespace MyFirstCSharp
             int[] iValues = { 1, 4, 6, 9, 10, 12, 16 };
 
             // 찾은 값의 쌍 을 등록 할 문자 변수 
-            string sFindValues = string.Empty; 
+            string sFindValues = string.Empty;
 
 
             // 1. 알고리즘을 이용하여 풀이하는 방법
