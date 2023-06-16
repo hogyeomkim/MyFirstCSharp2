@@ -53,6 +53,7 @@
             this.btnResult.TabIndex = 2;
             this.btnResult.Text = "개미수열 구하기";
             this.btnResult.UseVisualStyleBackColor = true;
+            this.btnResult.Click += new System.EventHandler(this.btnResult_Click);
             // 
             // Final_Exam01
             // 
