@@ -320,15 +320,40 @@
     <Compile Include="Lesson05_Class\Chap33_Struct[구조체].designer.cs">
       <DependentUpon>Chap33_Struct[구조체].cs</DependentUpon>
     </Compile>
+    <Compile Include="Lesson05_Class\Chap34_Struct_Apply_UserReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap34_Struct_Apply_UserReg.designer.cs">
+      <DependentUpon>Chap34_Struct_Apply_UserReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap34_Struture_Apply_Userinfo_T[사용자 정보].cs" />
+    <Compile Include="Lesson05_Class\Chap34_Struture_Apply_UserReg_T[사용자 등록].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap34_Struture_Apply_UserReg_T[사용자 등록].designer.cs">
+      <DependentUpon>Chap34_Struture_Apply_UserReg_T[사용자 등록].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap34_Struture_Exam_Login_T[로그인].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap34_Struture_Exam_Login_T[로그인].designer.cs">
+      <DependentUpon>Chap34_Struture_Exam_Login_T[로그인].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap35_Inheritance[상속].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap35_Inheritance[상속].Designer.cs">
+      <DependentUpon>Chap35_Inheritance[상속].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap36_abstract_Polymorphism[추상화와 다형성].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap36_abstract_Polymorphism[추상화와 다형성].designer.cs">
+      <DependentUpon>Chap36_abstract_Polymorphism[추상화와 다형성].cs</DependentUpon>
+    </Compile>
     <Compile Include="Lesson05_Class\Class1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="문제풀이용.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="문제풀이용.Designer.cs">
-      <DependentUpon>문제풀이용.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Lesson01_Intro\Chap04_DataType_ConvTest[데이터타입 변환 TEST].resx">
       <DependentUpon>Chap04_DataType_ConvTest[데이터타입 변환 TEST].cs</DependentUpon>
     </EmbeddedResource>
@@ -464,6 +489,18 @@
     <EmbeddedResource Include="Lesson05_Class\Chap33_Struct[구조체].resx">
       <DependentUpon>Chap33_Struct[구조체].cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Lesson05_Class\Chap34_Struture_Apply_UserReg_T[사용자 등록].resx">
+      <DependentUpon>Chap34_Struture_Apply_UserReg_T[사용자 등록].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson05_Class\Chap34_Struture_Exam_Login_T[로그인].resx">
+      <DependentUpon>Chap34_Struture_Exam_Login_T[로그인].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson05_Class\Chap35_Inheritance[상속].resx">
+      <DependentUpon>Chap35_Inheritance[상속].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson05_Class\Chap36_abstract_Polymorphism[추상화와 다형성].resx">
+      <DependentUpon>Chap36_abstract_Polymorphism[추상화와 다형성].cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -473,9 +510,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="문제풀이용.resx">
-      <DependentUpon>문제풀이용.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

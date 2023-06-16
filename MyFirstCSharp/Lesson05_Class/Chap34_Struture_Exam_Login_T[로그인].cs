@@ -59,9 +59,9 @@ namespace MyFirstCSharp.Lesson05_Class
 
         private void btnUserReg_Click(object sender, EventArgs e)
         {
-            // 사용자 등록 버튼을 클릭 시 
-            // 사용자 에 대한 정보를 담을수 있는 리스트 를
-            // 사용자 등록 클래스 전달 (참조 주소).
+            // 사용자 등록씨 버튼을 클릭 시 
+            // 사용자 에 대한 정김보를 담을수 있는겸 리스트 를
+            // 사용자 발등록 클래스 전호달 (참조 주소).
             Chap34_Struture_Apply_UserReg_T CHAP34 = new Chap34_Struture_Apply_UserReg_T(userinfos);
             CHAP34.ShowDialog();
         }
