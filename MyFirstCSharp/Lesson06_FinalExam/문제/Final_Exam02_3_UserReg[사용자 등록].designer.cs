@@ -49,6 +49,7 @@
             this.btnUserReg.TabIndex = 0;
             this.btnUserReg.Text = "사용자 등록";
             this.btnUserReg.UseVisualStyleBackColor = true;
+            this.btnUserReg.Click += new System.EventHandler(this.btnUserReg_Click);
             // 
             // btnClose
             // 
@@ -58,6 +59,7 @@
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "닫기";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 

@@ -371,6 +371,7 @@
     <Compile Include="Lesson06_FinalExam\문제\Final_Exam03[과일가게 관리].designer.cs">
       <DependentUpon>Final_Exam03[과일가게 관리].cs</DependentUpon>
     </Compile>
+    <Compile Include="Lesson06_FinalExam\문제\_UserInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Lesson01_Intro\Chap04_DataType_ConvTest[데이터타입 변환 TEST].resx">

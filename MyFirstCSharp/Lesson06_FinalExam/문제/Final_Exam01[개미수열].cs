@@ -13,12 +13,12 @@ namespace MyFirstCSharp
 
         private void btnResult_Click(object sender, EventArgs e)
         {
-            int n = 15;                                                 // 출력할 15 번째 개미수열
+            int n = 15;                                                         // 출력할 15 번째 개미수열
 
-            string antSequence = GenerateAntSequence(n);                // 개미수열을 생성하는 메서드를 호출하여
-                                                                        // n번째 개미수열을 생성하고 결과를 antSequence 변수에 저장
+            string antSequence = GenerateAntSequence(n);                        // 개미수열을 생성하는 메서드를 호출하여
+                                                                                // n번째 개미수열을 생성하고 결과를 antSequence 변수에 저장
 
-            MessageBox.Show($"개미수열 {n}번째: {antSequence}");        // 메시지 박스로 개미수열을 출력
+            MessageBox.Show($"개미수열 {n}번째: {antSequence}");                // 메시지 박스로 개미수열을 출력
         }
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace MyFirstCSharp
         /// </summary>
         /// <param name="n">개미수열의 번째</param>
         /// <returns>개미수열 문자열</returns>
-        /// 
+        
 
         private string GenerateAntSequence(int n)
         {

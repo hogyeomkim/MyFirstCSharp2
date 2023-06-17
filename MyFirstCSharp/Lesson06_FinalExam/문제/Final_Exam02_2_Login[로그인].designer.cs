@@ -31,7 +31,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Final_Exam02_2_Login));
             this.btnLogin = new System.Windows.Forms.Button();
-            this.btnUserReg = new System.Windows.Forms.Button();
+            this.btnUserReg11 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUserId = new System.Windows.Forms.TextBox();
@@ -47,15 +47,17 @@
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "로그인";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // btnUserReg
+            // btnUserReg11
             // 
-            this.btnUserReg.Location = new System.Drawing.Point(203, 55);
-            this.btnUserReg.Name = "btnUserReg";
-            this.btnUserReg.Size = new System.Drawing.Size(128, 29);
-            this.btnUserReg.TabIndex = 1;
-            this.btnUserReg.Text = "사용자 등록";
-            this.btnUserReg.UseVisualStyleBackColor = true;
+            this.btnUserReg11.Location = new System.Drawing.Point(203, 55);
+            this.btnUserReg11.Name = "btnUserReg11";
+            this.btnUserReg11.Size = new System.Drawing.Size(128, 29);
+            this.btnUserReg11.TabIndex = 1;
+            this.btnUserReg11.Text = "사용자 등록";
+            this.btnUserReg11.UseVisualStyleBackColor = true;
+            this.btnUserReg11.Click += new System.EventHandler(this.btnUserReg11_Click);
             // 
             // label1
             // 
@@ -110,7 +112,7 @@
             this.Controls.Add(this.txtUserId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnUserReg);
+            this.Controls.Add(this.btnUserReg11);
             this.Controls.Add(this.btnLogin);
             this.Name = "Final_Exam02_2_Login";
             this.Text = "사용자 로그인";
@@ -122,7 +124,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnUserReg;
+        private System.Windows.Forms.Button btnUserReg11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUserId;
