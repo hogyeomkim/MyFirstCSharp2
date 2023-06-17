@@ -365,11 +365,11 @@
     <Compile Include="Lesson06_FinalExam\문제\Final_Exam02_3_UserReg[사용자 등록].designer.cs">
       <DependentUpon>Final_Exam02_3_UserReg[사용자 등록].cs</DependentUpon>
     </Compile>
-    <Compile Include="Lesson06_FinalExam\문제\Final_Exam03[과일가게 관리].cs">
+    <Compile Include="Lesson06_FinalExam\문제\Chap99_Final_Exam03[과일가게 관리].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Lesson06_FinalExam\문제\Final_Exam03[과일가게 관리].designer.cs">
-      <DependentUpon>Final_Exam03[과일가게 관리].cs</DependentUpon>
+    <Compile Include="Lesson06_FinalExam\문제\Chap99_Final_Exam03[과일가게 관리].designer.cs">
+      <DependentUpon>Chap99_Final_Exam03[과일가게 관리].cs</DependentUpon>
     </Compile>
     <Compile Include="Lesson06_FinalExam\문제\_UserInfo.cs" />
     <Compile Include="Program.cs" />
@@ -527,8 +527,8 @@
     <EmbeddedResource Include="Lesson06_FinalExam\문제\Final_Exam02_3_UserReg[사용자 등록].resx">
       <DependentUpon>Final_Exam02_3_UserReg[사용자 등록].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lesson06_FinalExam\문제\Final_Exam03[과일가게 관리].resx">
-      <DependentUpon>Final_Exam03[과일가게 관리].cs</DependentUpon>
+    <EmbeddedResource Include="Lesson06_FinalExam\문제\Chap99_Final_Exam03[과일가게 관리].resx">
+      <DependentUpon>Chap99_Final_Exam03[과일가게 관리].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

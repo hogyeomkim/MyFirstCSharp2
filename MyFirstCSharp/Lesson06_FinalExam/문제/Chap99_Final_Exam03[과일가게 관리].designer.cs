@@ -265,8 +265,8 @@ namespace MyFirstCSharp
             this.btnOrderCancle.Size = new System.Drawing.Size(109, 28);
             this.btnOrderCancle.TabIndex = 15;
             this.btnOrderCancle.Text = "주문 취소 하기";
-            this.btnOrderCancle.UseVisualStyleBackColor = true; 
-            // 
+            this.btnOrderCancle.UseVisualStyleBackColor = true;
+            
             // btnBuy
             // 
             this.btnBuy.Location = new System.Drawing.Point(489, 142);
@@ -274,7 +274,8 @@ namespace MyFirstCSharp
             this.btnBuy.Size = new System.Drawing.Size(125, 28);
             this.btnBuy.TabIndex = 14;
             this.btnBuy.Text = "결제 하기";
-            this.btnBuy.UseVisualStyleBackColor = true; 
+            this.btnBuy.UseVisualStyleBackColor = true;
+           
             // 
             // groupBox4
             // 
@@ -363,7 +364,7 @@ namespace MyFirstCSharp
             this.btnShowTotalMargin.Size = new System.Drawing.Size(264, 26);
             this.btnShowTotalMargin.TabIndex = 23;
             this.btnShowTotalMargin.Text = "총 마진 보기";
-            this.btnShowTotalMargin.UseVisualStyleBackColor = true; 
+            this.btnShowTotalMargin.UseVisualStyleBackColor = true;
             // 
             // rdoW_M
             // 
@@ -409,7 +410,7 @@ namespace MyFirstCSharp
             this.btnShowUnitMargin.Size = new System.Drawing.Size(264, 26);
             this.btnShowUnitMargin.TabIndex = 19;
             this.btnShowUnitMargin.Text = "개별 마진 보기";
-            this.btnShowUnitMargin.UseVisualStyleBackColor = true; 
+            this.btnShowUnitMargin.UseVisualStyleBackColor = true;
             // 
             // grpInvoice
             // 
@@ -440,7 +441,7 @@ namespace MyFirstCSharp
             this.BONInvoiceClear.Size = new System.Drawing.Size(82, 31);
             this.BONInvoiceClear.TabIndex = 14;
             this.BONInvoiceClear.Text = "전체 삭제";
-            this.BONInvoiceClear.UseVisualStyleBackColor = true; 
+            this.BONInvoiceClear.UseVisualStyleBackColor = true;
             // 
             // txtAppleInvoieCount
             // 
@@ -457,7 +458,7 @@ namespace MyFirstCSharp
             this.btnFruitInvoice.Size = new System.Drawing.Size(82, 35);
             this.btnFruitInvoice.TabIndex = 3;
             this.btnFruitInvoice.Text = "발주 입고";
-            this.btnFruitInvoice.UseVisualStyleBackColor = true; 
+            this.btnFruitInvoice.UseVisualStyleBackColor = true;
             // 
             // txtW_MInvoieCount
             // 
@@ -532,7 +533,7 @@ namespace MyFirstCSharp
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.txtOrderList);
-            this.groupBox7.Location = new System.Drawing.Point(15, 46);
+            this.groupBox7.Location = new System.Drawing.Point(18, 47);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
