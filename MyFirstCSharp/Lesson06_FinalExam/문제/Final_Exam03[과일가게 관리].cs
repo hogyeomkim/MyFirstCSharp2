@@ -90,6 +90,13 @@ namespace MyFirstCSharp
             MessageBox.Show("결제가 완료되었습니다.");
 
             UpdateOrderList();
+            ResetOrder();
+        }
+        private void ResetOrder()
+        {
+            iTotalPrice = 0;
+            orderCount = 0;
+            totalOrderPrice = 0;
         }
 
 
