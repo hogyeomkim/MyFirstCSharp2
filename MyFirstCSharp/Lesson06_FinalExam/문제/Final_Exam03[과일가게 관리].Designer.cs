@@ -266,6 +266,7 @@ namespace MyFirstCSharp
             this.btnOrderCancle.TabIndex = 15;
             this.btnOrderCancle.Text = "주문 취소 하기";
             this.btnOrderCancle.UseVisualStyleBackColor = true;
+            this.btnOrderCancle.Click += new System.EventHandler(this.btnOrderCancel_Click);
             // 
             // btnBuy
             // 

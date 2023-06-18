@@ -19,54 +19,54 @@ namespace MyFirstCSharp
         }
 
 
-        private void btnFruit_Click(object sender, EventArgs e)
-        {
+        private int appleCountPrev = 10; // 이전 사과 주문 수량
+private int melonCountPrev = 10; // 이전 참외 주문 수량
+private int watermelonCountPrev = 10; // 이전 수박 주문 수량
 
-            Button btnTemp = (Button)sender;
-            string sFruitName = btnTemp.Tag.ToString();
-            switch (sFruitName)
-            {
-                // 결제 시 주문 수량 별 처리를 위하여 주문 버튼 클릭 후 
-                case "사과":
-                    // 사과의 주문 처리
-                    FruitInventoryAdj(lblAppCount, sFruitName, 2000);
-                    break;
-                case "참외":
-                    // 참외의 주문 처리 
-                    FruitInventoryAdj(lblMelonCount, sFruitName, 2500);
-                    break;
-                case "수박":
-                    // 수박의 주문 처리
-                    FruitInventoryAdj(lblW_MCount, sFruitName, 18000);
-                    break;
-            }
-        }
+private void btnFruit_Click(object sender, EventArgs e)
+{
+    Button btnTemp = (Button)sender;
+    string sFruitName = btnTemp.Tag.ToString();
+    switch (sFruitName)
+    {
+        case "사과":
+            FruitInventoryAdj(lblAppCount, sFruitName, 2000);
+            break;
+        case "참외":
+            FruitInventoryAdj(lblMelonCount, sFruitName, 2500);
+            break;
+        case "수박":
+            FruitInventoryAdj(lblW_MCount, sFruitName, 18000);
+            break;
+    }
+}
 
+void FruitInventoryAdj(Label lblFruitCnt, string sFruitName, int iSalePrice)
+{
+    int iFruitCount = 0;
+    iFruitCount = int.Parse(lblFruitCnt.Text);
+    if (iFruitCount == 0)
+    {
+        MessageBox.Show($"{sFruitName}의 재고 수량이 0 입니다. 주문을 할 수 없습니다.");
+        return;
+    }
 
-        void FruitInventoryAdj(Label lblFruitCnt, string sFruitName, int iSalePrice)
-        {
-            int iFruitCount = 0;
-            // 과일의 현재 재고 수량이 0 일 경우 리턴. 
-            iFruitCount = int.Parse(lblFruitCnt.Text);
-            if (iFruitCount == 0)
-            {
-                MessageBox.Show($"{sFruitName}의 재고 수량이 0 입니다. 주문을 할 수 없습니다.");
-                return;
-            }
+    // 과일의 재고 수량을 1 차감
+    --iFruitCount;
+    lblFruitCnt.Text = Convert.ToString(iFruitCount);
 
-            // 던져주는 과일의 재고 개수 1 차감. 
-            --iFruitCount;
-
-            lblFruitCnt.Text = Convert.ToString(iFruitCount);
-
-            // 총 누적 구매 금액
-            iTotalPrice += iSalePrice;
-        }
+    // 주문 금액을 총 결제 금액에 추가
+    iTotalPrice += iSalePrice;
+}
 
         private void btnTotalPrice_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"총 결재 금액은 {iTotalPrice} 입니다.");
         }
+
+
+
+
 
 
 
@@ -78,6 +78,10 @@ namespace MyFirstCSharp
             if (iTotalPrice > custCash)
             {
                 MessageBox.Show("결제를 할 수 없습니다. 고객 잔액이 부족합니다.");
+                // 이전에 누른 과일 주문으로 과일 재고 복원
+                lblAppCount.Text = Convert.ToString(appleCountPrev);
+                lblMelonCount.Text = Convert.ToString(melonCountPrev);
+                lblW_MCount.Text = Convert.ToString(watermelonCountPrev);
                 return;
             }
 
@@ -88,6 +92,11 @@ namespace MyFirstCSharp
             lblManCash.Text = manCash.ToString();
 
             MessageBox.Show("결제가 완료되었습니다.");
+
+            // 결제 완료 후 현재 주문 값을 이전 주문 값으로 저장
+            appleCountPrev = int.Parse(lblAppCount.Text);
+            melonCountPrev = int.Parse(lblMelonCount.Text);
+            watermelonCountPrev = int.Parse(lblW_MCount.Text);
 
             UpdateOrderList();
             ResetOrder();
@@ -127,11 +136,43 @@ namespace MyFirstCSharp
             txtOrderList.ScrollToCaret(); // 스크롤을 아래로 이동시켜 가장 최근 내용을 볼 수 있도록 합니다.
         }
 
+        private void btnOrderCancel_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtOrderList.Text))
+            {
+                MessageBox.Show("상품이 없어서 취소할 내역이 없습니다.");
+                return;
+            }
 
+            // 주문 내역 초기화
+            ResetOrder();
 
+            // 재고 수량 복원
+            lblAppCount.Text = "10";
+            lblMelonCount.Text = "10";
+            lblW_MCount.Text = "10";
 
+            // 거래 내역 초기화
+            txtOrderList.Clear();
 
+            // 고객 잔액 초기화
+            custCash = 100000;
+            lblCustCash.Text = custCash.ToString();
 
+            // 관리자 잔액 초기화
+            manCash = 100000;
+            lblManCash.Text = manCash.ToString();
+
+            MessageBox.Show("주문이 취소되었습니다. 잔액이 초기화되었습니다.");
+        }
+
+        /*
+         * 발생한문제
+         * 1. 주문버튼을 누를때 결제버튼과 상관없이 10만원에서 자동차감된다.
+         * 2. 결제완료가되면 차감된 값이 변경되어 적용되나 결제가 되지않더라도 이미 값이 변경되어있다...
+         * 3. 그래서 5천원이 남아있다면, 수박은 잔액부족으로 결제실패가 된다. 근데 2500원인 참외도 사지지않는다.
+         * 4. 결제할 수 없을때 이미 누른 과일주문으로 과일 재고가 이전으로 되돌아가지않는다.
+         */
 
     }
 }
