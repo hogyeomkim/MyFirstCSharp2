@@ -20,59 +20,52 @@ namespace MyFirstCSharp
 
 
         private int appleCountPrev = 10; // 이전 사과 주문 수량
-private int melonCountPrev = 10; // 이전 참외 주문 수량
-private int watermelonCountPrev = 10; // 이전 수박 주문 수량
+        private int melonCountPrev = 10; // 이전 참외 주문 수량
+        private int watermelonCountPrev = 10; // 이전 수박 주문 수량
 
-private void btnFruit_Click(object sender, EventArgs e)
-{
-    Button btnTemp = (Button)sender;
-    string sFruitName = btnTemp.Tag.ToString();
-    switch (sFruitName)
-    {
-        case "사과":
-            FruitInventoryAdj(lblAppCount, sFruitName, 2000);
-            break;
-        case "참외":
-            FruitInventoryAdj(lblMelonCount, sFruitName, 2500);
-            break;
-        case "수박":
-            FruitInventoryAdj(lblW_MCount, sFruitName, 18000);
-            break;
-    }
-}
+        private void btnFruit_Click(object sender, EventArgs e)
+        {
+            Button btnTemp = (Button)sender;
+            string sFruitName = btnTemp.Tag.ToString();
+            switch (sFruitName)
+            {
+                case "사과":
+                    FruitInventoryAdj(lblAppCount, sFruitName, 2000);
+                    break;
+                case "참외":
+                    FruitInventoryAdj(lblMelonCount, sFruitName, 2500);
+                    break;
+                case "수박":
+                    FruitInventoryAdj(lblW_MCount, sFruitName, 18000);
+                    break;
+            }
+        }
 
-void FruitInventoryAdj(Label lblFruitCnt, string sFruitName, int iSalePrice)
-{
-    int iFruitCount = 0;
-    iFruitCount = int.Parse(lblFruitCnt.Text);
-    if (iFruitCount == 0)
-    {
-        MessageBox.Show($"{sFruitName}의 재고 수량이 0 입니다. 주문을 할 수 없습니다.");
-        return;
-    }
+        void FruitInventoryAdj(Label lblFruitCnt, string sFruitName, int iSalePrice)
+        {
+            int iFruitCount = 0;
+            iFruitCount = int.Parse(lblFruitCnt.Text);
+            if (iFruitCount == 0)
+            {
+                MessageBox.Show($"{sFruitName}의 재고 수량이 0 입니다. 주문을 할 수 없습니다.");
+                return;
+            }
 
-    // 과일의 재고 수량을 1 차감
-    --iFruitCount;
-    lblFruitCnt.Text = Convert.ToString(iFruitCount);
+            // 과일의 재고 수량을 1 차감
+            --iFruitCount;
+            lblFruitCnt.Text = Convert.ToString(iFruitCount);
 
-    // 주문 금액을 총 결제 금액에 추가
-    iTotalPrice += iSalePrice;
-}
+            // 주문 금액을 총 결제 금액에 추가
+            iTotalPrice += iSalePrice;
+        }
 
         private void btnTotalPrice_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"총 결재 금액은 {iTotalPrice} 입니다.");
         }
 
-
-
-
-
-
-
         private int custCash = 100000; // 고객 잔액 초기 금액
         private int manCash = 100000; // 관리자 초기 가게 잔액
-
         private void btnBuy_Click(object sender, EventArgs e)
         {
             if (iTotalPrice > custCash)
@@ -136,7 +129,10 @@ void FruitInventoryAdj(Label lblFruitCnt, string sFruitName, int iSalePrice)
             txtOrderList.ScrollToCaret(); // 스크롤을 아래로 이동시켜 가장 최근 내용을 볼 수 있도록 합니다.
         }
 
-        private void btnOrderCancel_Click(object sender, EventArgs e)
+
+
+        
+        private void btnOrderCancle_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtOrderList.Text))
             {
@@ -164,15 +160,21 @@ void FruitInventoryAdj(Label lblFruitCnt, string sFruitName, int iSalePrice)
             lblManCash.Text = manCash.ToString();
 
             MessageBox.Show("주문이 취소되었습니다. 잔액이 초기화되었습니다.");
-        }
-
-        /*
-         * 발생한문제
-         * 1. 주문버튼을 누를때 결제버튼과 상관없이 10만원에서 자동차감된다.
-         * 2. 결제완료가되면 차감된 값이 변경되어 적용되나 결제가 되지않더라도 이미 값이 변경되어있다...
-         * 3. 그래서 5천원이 남아있다면, 수박은 잔액부족으로 결제실패가 된다. 근데 2500원인 참외도 사지지않는다.
-         * 4. 결제할 수 없을때 이미 누른 과일주문으로 과일 재고가 이전으로 되돌아가지않는다.
-         */
-
+        }              
     }
 }
+
+/*
+        * 발생한문제
+        * 1. 주문버튼을 누를때 결제버튼과 상관없이 10만원에서 자동차감된다.
+        * 2. 결제완료가되면 차감된 값이 변경되어 적용되나 결제가 되지않더라도 이미 값이 변경되어있다...
+        * 3. 그래서 5천원이 남아있다면, 수박은 잔액부족으로 결제실패가 된다. 근데 2500원인 참외도 사지지않는다.
+        * 4. 결제할 수 없을때 이미 누른 과일주문으로 과일 재고가 이전으로 되돌아가지않는다.
+        * 5. 취소버튼을 눌럿을때 초기화는 쉬운데 직전단계로 돌리는걸 못하겠다.
+        * 
+        * 해결한 문제
+        * 4번만 해결..
+        *
+        *주문버튼을 누를때 잔고에서 금액이 자동차감되는걸 어떻게해야 막을 수 있을까?
+        *
+        */
