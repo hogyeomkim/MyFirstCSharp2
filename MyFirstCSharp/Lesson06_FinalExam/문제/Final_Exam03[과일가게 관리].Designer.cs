@@ -366,6 +366,7 @@ namespace MyFirstCSharp
             this.btnShowTotalMargin.TabIndex = 23;
             this.btnShowTotalMargin.Text = "총 마진 보기";
             this.btnShowTotalMargin.UseVisualStyleBackColor = true;
+            this.btnShowTotalMargin.Click += new System.EventHandler(this.btnShowTotalMargin_Click);
             // 
             // rdoW_M
             // 
@@ -412,6 +413,7 @@ namespace MyFirstCSharp
             this.btnShowUnitMargin.TabIndex = 19;
             this.btnShowUnitMargin.Text = "개별 마진 보기";
             this.btnShowUnitMargin.UseVisualStyleBackColor = true;
+            this.btnShowUnitMargin.Click += new System.EventHandler(this.btnShowUnitMargin_Click);
             // 
             // grpInvoice
             // 
@@ -443,6 +445,7 @@ namespace MyFirstCSharp
             this.BONInvoiceClear.TabIndex = 14;
             this.BONInvoiceClear.Text = "전체 삭제";
             this.BONInvoiceClear.UseVisualStyleBackColor = true;
+            this.BONInvoiceClear.Click += new System.EventHandler(this.BONInvoiceClear_Click);
             // 
             // txtAppleInvoieCount
             // 
