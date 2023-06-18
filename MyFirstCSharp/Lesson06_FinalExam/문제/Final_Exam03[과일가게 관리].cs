@@ -93,6 +93,7 @@ namespace MyFirstCSharp
 
             UpdateOrderList();
             ResetOrder();
+            
         }
         private void ResetOrder()
         {
@@ -100,12 +101,13 @@ namespace MyFirstCSharp
             orderCount = 0;
             totalOrderPrice = 0;
         }
-
-
         private int orderCount = 0; // 주문 수량을 저장할 변수
         private int totalOrderPrice = 0; // 누적된 주문 금액을 저장할 변수
+
+
         private void UpdateOrderList()
         {
+
             int appleCount = 10 - int.Parse(lblAppCount.Text);
             int melonCount = 10 - int.Parse(lblMelonCount.Text);
             int watermelonCount = 10 - int.Parse(lblW_MCount.Text);
@@ -115,10 +117,8 @@ namespace MyFirstCSharp
             int watermelonPrice = watermelonCount * 18000;
 
             totalOrderPrice += applePrice + melonPrice + watermelonPrice;
-            orderCount++;
 
-            string orderDetails = $"누적 주문 금액: {totalOrderPrice}원\r\n";
-            orderDetails += $"주문 수량: {orderCount}회\r\n";
+            string orderDetails = $"누적 주문 금액: {totalOrderPrice}원\r\n";         
             orderDetails += $"사과: {appleCount}개, 금액: {applePrice}원\r\n";
             orderDetails += $"참외: {melonCount}개, 금액: {melonPrice}원\r\n";
             orderDetails += $"수박: {watermelonCount}개, 금액: {watermelonPrice}원\r\n";
@@ -129,9 +129,11 @@ namespace MyFirstCSharp
             txtOrderList.ScrollToCaret(); // 스크롤을 아래로 이동시켜 가장 최근 내용을 볼 수 있도록 합니다.
         }
 
+       
 
 
-        
+
+
         private void btnOrderCancle_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtOrderList.Text))
