@@ -129,10 +129,8 @@ namespace MyFirstCSharp
             txtOrderList.ScrollToCaret(); // 스크롤을 아래로 이동시켜 가장 최근 내용을 볼 수 있도록 합니다.
         }
 
-       
 
-
-
+        private string canceledInvoiceText = ""; // 취소된 발주 내역을 저장할 변수
 
         private void btnOrderCancle_Click(object sender, EventArgs e)
         {
@@ -142,6 +140,11 @@ namespace MyFirstCSharp
                 return;
             }
 
+            // 발주 내역 초기화
+            canceledInvoiceText = txtOrderList.Text; // 취소된 발주 내역을 저장
+
+            txtOrderList.Clear();
+
             // 주문 내역 초기화
             ResetOrder();
 
@@ -149,9 +152,6 @@ namespace MyFirstCSharp
             lblAppCount.Text = "10";
             lblMelonCount.Text = "10";
             lblW_MCount.Text = "10";
-
-            // 거래 내역 초기화
-            txtOrderList.Clear();
 
             // 고객 잔액 초기화
             custCash = 100000;
@@ -162,7 +162,88 @@ namespace MyFirstCSharp
             lblManCash.Text = manCash.ToString();
 
             MessageBox.Show("주문이 취소되었습니다. 잔액이 초기화되었습니다.");
-        }              
+        }
+
+        
+
+        private void btnFruitInvoice_Click(object sender, EventArgs e)
+        {
+            int appleCount = 0;
+            int melonCount = 0;
+            int watermelonCount = 0;
+
+            // 발주 수량을 입력받아 변수에 저장
+            int.TryParse(txtAppleInvoieCount.Text, out appleCount);
+            int.TryParse(txtMelonInvoieCount.Text, out melonCount);
+            int.TryParse(txtW_MInvoieCount.Text, out watermelonCount);
+
+            if (!string.IsNullOrEmpty(canceledInvoiceText))
+            {
+                txtOrderList.Text = canceledInvoiceText;
+                canceledInvoiceText = ""; // 초기화된 발주 내역을 비움
+            }
+
+            // 발주 내역이 없을 경우 메시지 표시
+            if (appleCount == 0 && melonCount == 0 && watermelonCount == 0)
+            {
+                MessageBox.Show("발주 내역이 없습니다.");
+                return;
+            }
+
+            // 발주 수량이 입력되지 않은 경우 0으로 처리
+            if (string.IsNullOrWhiteSpace(txtAppleInvoieCount.Text))
+                appleCount = 0;
+            if (string.IsNullOrWhiteSpace(txtMelonInvoieCount.Text))
+                melonCount = 0;
+            if (string.IsNullOrWhiteSpace(txtW_MInvoieCount.Text))
+                watermelonCount = 0;
+
+            // 발주 금액 계산
+            int applePrice = 2000;
+            int melonPrice = 2500;
+            int watermelonPrice = 18000;
+
+            int totalPrice = appleCount * applePrice + melonCount * melonPrice + watermelonCount * watermelonPrice;
+
+            // 총 발주 금액이 가게 잔액보다 클 경우 메시지 표시
+            int storeBalance = int.Parse(lblManCash.Text);
+
+            if (totalPrice > storeBalance)
+            {
+                MessageBox.Show("발주 할 수 없습니다.");
+                return;
+            }
+
+            // 발주가 정상적으로 이루어진 경우 가게 잔액 차감 및 발주 내역 표시
+            storeBalance -= totalPrice;
+
+            lblManCash.Text = storeBalance.ToString();
+
+            string invoiceText = "";
+
+            if (appleCount > 0)
+            {
+                int appleInvoicePrice = (int)(appleCount * applePrice * 0.6);
+                invoiceText += $"사과: {appleCount}개, 발주비용 {appleInvoicePrice}원\r\n";
+            }
+
+            if (melonCount > 0)
+            {
+                int melonInvoicePrice = (int)(melonCount * melonPrice * 0.6);
+                invoiceText += $"참외: {melonCount}개, 발주비용 {melonInvoicePrice}원\r\n";
+            }
+
+            if (watermelonCount > 0)
+            {
+                int watermelonInvoicePrice = (int)(watermelonCount * watermelonPrice * 0.6);
+                invoiceText += $"수박: {watermelonCount}개, 발주비용 {watermelonInvoicePrice}원\r\n";
+            }
+
+            txtOrderList.Text += invoiceText;
+
+            MessageBox.Show("발주가 완료되었습니다.");
+        }
+
     }
 }
 

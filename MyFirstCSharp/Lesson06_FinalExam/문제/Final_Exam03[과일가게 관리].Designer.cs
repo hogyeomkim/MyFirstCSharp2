@@ -460,6 +460,7 @@ namespace MyFirstCSharp
             this.btnFruitInvoice.TabIndex = 3;
             this.btnFruitInvoice.Text = "발주 입고";
             this.btnFruitInvoice.UseVisualStyleBackColor = true;
+            this.btnFruitInvoice.Click += new System.EventHandler(this.btnFruitInvoice_Click);
             // 
             // txtW_MInvoieCount
             // 
