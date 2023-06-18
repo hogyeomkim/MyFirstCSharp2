@@ -17,7 +17,7 @@ namespace MyFirstCSharp
         {
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-            System.Windows.Forms.Application.Run(new Chap99_Final_Exam03());
+            System.Windows.Forms.Application.Run(new Final_Exam03());
         }
     }
 }

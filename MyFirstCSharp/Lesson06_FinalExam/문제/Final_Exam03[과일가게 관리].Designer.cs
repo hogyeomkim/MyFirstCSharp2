@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 namespace MyFirstCSharp
 {
-    partial class Chap99_Final_Exam03
+    partial class Final_Exam03
     {
         /// <summary>
         /// Required designer variable.
@@ -266,7 +266,7 @@ namespace MyFirstCSharp
             this.btnOrderCancle.TabIndex = 15;
             this.btnOrderCancle.Text = "주문 취소 하기";
             this.btnOrderCancle.UseVisualStyleBackColor = true;
-            
+            // 
             // btnBuy
             // 
             this.btnBuy.Location = new System.Drawing.Point(489, 142);
@@ -275,7 +275,7 @@ namespace MyFirstCSharp
             this.btnBuy.TabIndex = 14;
             this.btnBuy.Text = "결제 하기";
             this.btnBuy.UseVisualStyleBackColor = true;
-           
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // groupBox4
             // 
@@ -533,7 +533,7 @@ namespace MyFirstCSharp
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.txtOrderList);
-            this.groupBox7.Location = new System.Drawing.Point(18, 47);
+            this.groupBox7.Location = new System.Drawing.Point(15, 46);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -578,7 +578,7 @@ namespace MyFirstCSharp
             this.label13.TabIndex = 0;
             this.label13.Text = "가게 잔액";
             // 
-            // Chap99_Final_Exam03
+            // Final_Exam03
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -586,7 +586,7 @@ namespace MyFirstCSharp
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Chap99_Final_Exam03";
+            this.Name = "Final_Exam03";
             this.Text = "과일가게 관리";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
