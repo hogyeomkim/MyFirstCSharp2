@@ -361,22 +361,24 @@ namespace MyFirstCSharp
         **/
         private void btnShowUnitMargin_Click(object sender, EventArgs e)
         {
+
+            
             //고객 주문 과일 개수 가격 - 과일별 발주 금액
             int appleCount = appleCountOrder;
             int melonCount = melonCountOrder;
             int watermelonCount = watermelonCountOrder;
 
-            int applePrice = 2000;
-            int melonPrice = 2500;
-            int watermelonPrice = 18000;
+            int applePrice = (int)(appleCount * 2000);
+            int melonPrice = (int)(melonCount * 2500);
+            int watermelonPrice = (int)(watermelonCount * 18000);
 
             int totalPrice = appleCount * applePrice + melonCount * melonPrice + watermelonCount * watermelonPrice;
 
-            int appleInvoicePrice = (int)(appleCount * applePrice * 0.6);
+            int appleInvoicePrice = (int)(applePrice * 0.6);  //사과 주문횟수 * 사과가격 2000원 *0.6
             int melonInvoicePrice = (int)(melonCount * melonPrice * 0.6);
             int watermelonInvoicePrice = (int)(watermelonCount * watermelonPrice * 0.6);
 
-            int appleMargin = applePrice - appleInvoicePrice;
+            int appleMargin = applePrice - appleInvoicePrice;  //2000 - 사과 주문횟수 * 사과가격 2000원 *0.6
             int melonMargin = melonPrice - melonInvoicePrice;
             int watermelonMargin = watermelonPrice - watermelonInvoicePrice;
 
@@ -389,6 +391,12 @@ namespace MyFirstCSharp
                     return;
                 }
                 MessageBox.Show($"사과의 개별 마진은 {appleMargin}원 입니다.");
+            
+            
+            
+            
+            
+            
             }
             else if (rdoMelon.Checked == true)
             {
@@ -425,7 +433,7 @@ namespace MyFirstCSharp
             int melonCount = melonCountOrder;
             int watermelonCount = watermelonCountOrder;
 
-            int applePrice = 2000;
+            int applePrice = 2000* appleCount;
             int melonPrice = 2500;
             int watermelonPrice = 18000;
 
