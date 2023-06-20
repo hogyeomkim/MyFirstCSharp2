@@ -15,69 +15,63 @@ namespace MyFirstCSharp
         // 사용자 정보 리스트 생성
         private List<User> userList;
 
-        // 비밀번호 실패 횟수
-        private int passwordFailCount;
-
         public Final_Exam02_2_Login()
         {
             InitializeComponent();
 
             // 사용자 리스트를 새롭게 정의
             userList = new List<User>();
-            // 비밀번호 실패 횟수 초기화 0으로
-            passwordFailCount = 0;
         }
 
-        // 로그인 버튼을 클릭했을때 
+        // 로그인 버튼을 클릭했을 때
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // 입력 ID와 비밀번호 텍스트를 들고와서 변수에 담기
             string userID = txtUserId.Text;
             string password = txtPassWord.Text;
 
-            // 사용자 ID가 등록되어있는지 확인하기.
-            bool userExists = userList.Any(user => user.UserID == userID);
-            if (!userExists)
+            // 사용자 ID가 등록되어 있는지 확인하기.
+            User matchingUser = userList.FirstOrDefault(user => user.UserID == userID);
+            if (matchingUser == null)
             {
                 MessageBox.Show("존재하지 않는 ID입니다.");
                 return;
             }
 
             // 비밀번호는 일치하는가? 일치하면 반갑고 아니면 비밀번호 오류 횟수 나타내기
-            User matchingUser = userList.First(user => user.UserID == userID);
-
             if (matchingUser.Password == password)
             {
                 MessageBox.Show($"{matchingUser.UserName}님 반갑습니다.");
 
                 // 비밀번호 실패 횟수 0으로 리셋
-                passwordFailCount = 0;
+                matchingUser.PasswordFailCount = 0;
             }
             else
             {
                 // 비밀번호 실패 횟수 1씩 증가
-                passwordFailCount++;
+                matchingUser.PasswordFailCount++;
 
-                if (passwordFailCount >= 5)
+                if (matchingUser.PasswordFailCount >= 5)
                 {
                     MessageBox.Show("비밀번호가 5회 이상 틀려 프로그램을 종료합니다.");
                     Application.Exit();
                 }
                 else
                 {
-                    int remainingAttempts = 5 - passwordFailCount;
+                    int remainingAttempts = 5 - matchingUser.PasswordFailCount;
                     MessageBox.Show($"비밀번호를 잘못 입력하였습니다. 남은 횟수: {remainingAttempts}회");
                 }
             }
         }
 
-        // 사용자 등록 버튼 눌렀을때 02_03 그대로 불러오기
+        // 사용자 등록 버튼 눌렀을 때
         private void btnUserReg11_Click(object sender, EventArgs e)
         {
             Final_Exam02_3_UserReg userregister = new Final_Exam02_3_UserReg(userList);
             userregister.ShowDialog();
         }
     }
+    
 }
 
 
